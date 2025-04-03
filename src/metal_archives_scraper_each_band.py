@@ -14,7 +14,7 @@ def parse_band_stats(text):
     lines = text.strip().splitlines()
     stats = {}
     for i in range(0, len(lines), 2):
-        key = lines[i].rstrip(":").strip()  # Remove colon and extra whitespace.
+        key = lines[i].rstrip(":").strip()
         value = lines[i + 1].strip() if i + 1 < len(lines) else ""
         stats[key] = value
     return stats
@@ -27,7 +27,7 @@ options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 wait = WebDriverWait(driver, 10)
 
-input_csv = "/home/aosousa/Dropbox/1_PORTFOLIO/metal_archives_brasil/src/metal_archives_brasil_links.csv"  # CSV file should contain a column named "url"
+input_csv = "metal_archives_brasil_links.csv"
 df_urls = pd.read_csv(input_csv)
 
 for idx, row in df_urls.iterrows():
